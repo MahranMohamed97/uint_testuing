@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ProjectItiTeam.Models.Level>
+
+@{
+    Layout = "_LevelsLayout";
+}
+
+
+@if(Model.Count()==0){
+<div class="alert alert-info">Sorry , No Exist Account .......</div>
+
+
+}else{
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" class="btn btn-outline-success rounded-pill" asp-route-id="@item.Id">Edit
+                                    <i class="fa fa-edit"></i>
+                                </a> |
+                                <a asp-action="Details" class="btn btn-outline-primary rounded-pill" asp-route-id="@item.Id">Details
+                                    <i class="fa fa-info"></i>
+                                </a> |
+                                <a asp-action="Delete" class="btn btn-outline-danger rounded-pill" asp-route-id="@item.Id">Delete
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                }
+                    </tbody>
+                </table>
+   
+}
+<div class=" col-md-4 me-25">
+
+ <a class="btn btn-outline-light rounded-pill w-50 me-25" asp-action="Create">Create</a>
+ </div>

@@ -1,0 +1,15 @@
+﻿@model ApplicationUser
+
+<nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+           
+           
+             <li>
+                <a class="text-primary mr-1" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @Model.Name</a>
+            </li>
+            <li >
+                  <img class="mx-1" src="@Model.picture" style="border-radius:40px;width: 50%;height:50%;" />
+            </li>
+        </ul>
+  </nav>
+    
